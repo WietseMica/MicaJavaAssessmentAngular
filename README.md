@@ -1,3 +1,11 @@
+#important
+Take the following if necessary. In the file /src/app/api/api.service.ts you need to edit the following code on line 15
+
+Some things have not yet been done.
+
+- Automatic refresh of history overview
+- Validation form fields
+
 # Calculator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
