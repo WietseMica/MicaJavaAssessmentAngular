@@ -1,0 +1,25 @@
+<div class="content" role="main">
+
+  <mat-card>
+    <mat-card-title>Rekenmachine</mat-card-title>
+    <mat-card-content>
+        <app-calculator></app-calculator>
+    </mat-card-content>
+  </mat-card>
+  <br/><br/>
+  <mat-card>
+    <mat-card-title>Geschiedenis</mat-card-title>
+    <mat-card-content>
+
+      <mat-list>
+        <mat-list-item *ngFor="let item of history">
+          {{ item.firstNumber }} {{ item.symbol }} {{ item.secondNumber }} = {{ item.result }}
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<router-outlet></router-outlet>

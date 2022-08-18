@@ -1,0 +1,29 @@
+<form #calculationForm="ngForm" (ngSubmit)="onSubmit()">
+
+  {{ calulator | json }} <br/><br/>
+  <h1>Result: {{ calulator.firstNumber }} {{ calulator.symbol }} {{ calulator.secondNumber }}
+    <span *ngIf="calulator.firstNumber != null && calulator.symbol != null && calulator.secondNumber != null">=</span>
+    {{ calulator.result}}
+  </h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Getal</mat-label>
+    <input matInput placeholder="" value="" required [(ngModel)]="calulator.firstNumber" id="firstNumber"
+           name="secondNumber">
+  </mat-form-field>
+  <br/>
+
+  <mat-button-toggle-group name="symbol">
+    <mat-button-toggle (click)="setSymbol(symbol.value)" *ngFor="let symbol of symbols" [value]="symbol.value"> {{ symbol.viewValue }} </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Getal</mat-label>
+    <input matInput placeholder="" value="" required [(ngModel)]="calulator.secondNumber" id="secondNumber"
+           name="secondNumber">
+  </mat-form-field>
+  <br />
+  <button mat-raised-button type="submit"> = </button>
+</form>
